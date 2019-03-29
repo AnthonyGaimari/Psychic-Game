@@ -19,7 +19,7 @@ document.onkeyup = function (event) {
                         wins++;
                         numGuesses = 10;
                         guessChoices = [];
-                        //console.log(guessChoices);
+                        console.log(guessChoices);
                         console.log(playersGuess);
                 }
 
