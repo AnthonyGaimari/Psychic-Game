@@ -8,8 +8,7 @@ var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.l
 document.onkeyup = function (event) {
 
         var playersGuess = event.key;
-        //var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
+        
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
 
@@ -35,7 +34,7 @@ document.onkeyup = function (event) {
                 }
 
                 if (numGuesses === 0) {
-                        alert("Sorry you lost would you like to play again?");
+                        alert("Sorry you lost, let's play again?");
                         numGuesses = 10;
                         losses++;
                         guessChoices = [];
