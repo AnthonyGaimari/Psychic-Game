@@ -4,11 +4,11 @@ var wins = 0;
 var losses = 0;
 var numGuesses = 10;
 var guessChoices = [];
-
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 document.onkeyup = function (event) {
 
         var playersGuess = event.key;
-        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        //var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
         var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 
@@ -16,17 +16,20 @@ document.onkeyup = function (event) {
         if (options.indexOf(playersGuess) > -1) {
 
                 if (playersGuess === computerGuess) {
-                        wins++;
+
                         numGuesses = 10;
+                        wins++;
                         guessChoices = [];
-                        console.log(guessChoices);
-                        console.log(playersGuess);
+                        resetComputerGuess();
+
+                        console.log("Guess",guessChoices);
+                        console.log("Player",playersGuess);
                 }
 
-                if (playersGuess != computerGuess) {
+               else if (playersGuess != computerGuess) {
                         numGuesses--;
                         guessChoices.push(playersGuess);
-                        console.log(computerGuess);
+                        console.log("Computer",computerGuess);
                 }
 
                 if (numGuesses === 0) {
@@ -34,6 +37,7 @@ document.onkeyup = function (event) {
                         numGuesses = 10;
                         losses++;
                         guessChoices = [];
+                        resetComputerGuess();
                 }
 
                 var html =
@@ -50,3 +54,6 @@ document.onkeyup = function (event) {
         }
 };
 
+// function resetComputerGuess() {
+//         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+// }
