@@ -21,6 +21,7 @@ document.onkeyup = function (event) {
                         wins++;
                         guessChoices = [];
                         resetComputerGuess();
+                        alert("You got it right! let's play again");
 
                         console.log("Guess",guessChoices);
                         console.log("Player",playersGuess);
@@ -30,10 +31,11 @@ document.onkeyup = function (event) {
                         numGuesses--;
                         guessChoices.push(playersGuess);
                         console.log("Computer",computerGuess);
+                        alert("Wrong try again");
                 }
 
                 if (numGuesses === 0) {
-
+                        alert("Sorry you lost would you like to play again?");
                         numGuesses = 10;
                         losses++;
                         guessChoices = [];
@@ -41,7 +43,7 @@ document.onkeyup = function (event) {
                 }
 
                 var html =
-                        "<h1> The Psychic Game </h1>" +
+                        "<h1>The Psychic Game </h1><br>" + 
                         "<p>Guess what letter I'm thinking of!</p>" +
                         "<p>Wins: " + wins + "</p>" +
                         "<p>Losses: " + losses + "</p>" +
