@@ -52,8 +52,8 @@ document.onkeyup = function (event) {
 
 
         }
+        function resetComputerGuess() {
+                computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        }
 };
 
-// function resetComputerGuess() {
-//         computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-// }
